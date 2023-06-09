@@ -11,6 +11,11 @@ let context;
 const snakeX = blockSize * 5;
 const snakeY = blockSize * 5;
 
+let foodX = blockSize * 10;
+let foodY = blockSize * 10;
+
+console.log(foodX);
+
 window.onload = function () {
   board = document.getElementById('board');
   board.height = rows * blockSize;
@@ -26,4 +31,7 @@ function update() {
 
   context.fillStyle = 'lime';
   context.fillRect(snakeX, snakeY, blockSize, blockSize);
+
+  context.fillStyle = 'red';
+  context.fillRect(foodX, foodY, blockSize, blockSize);
 }
