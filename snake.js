@@ -11,8 +11,8 @@ let context;
 const snakeX = blockSize * 5;
 const snakeY = blockSize * 5;
 
-let foodX = blockSize * 10;
-let foodY = blockSize * 10;
+let foodX;
+let foodY;
 
 console.log(foodX);
 
@@ -22,6 +22,7 @@ window.onload = function () {
   board.width = cols * blockSize;
   context = board.getContext('2d');
 
+  placeFood();
   update();
 };
 
@@ -34,4 +35,9 @@ function update() {
 
   context.fillStyle = 'red';
   context.fillRect(foodX, foodY, blockSize, blockSize);
+}
+
+function placeFood() {
+  foodX = Math.floor(Math.random() * cols) * blockSize;
+  foodY = Math.floor(Math.random() * rows) * blockSize;
 }
